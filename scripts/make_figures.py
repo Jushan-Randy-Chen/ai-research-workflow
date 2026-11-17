@@ -29,7 +29,7 @@ def load(agent: str) -> np.ndarray:
 def main() -> None:
     figures.use_style()
     fig, ax = plt.subplots(figsize=figures.size("column"))
-    summary = {}
+    summary, paired = {}, {}
     for agent in AGENTS:
         curves = load(agent)                                   # (seeds, steps)
         if len(curves) < 2:
@@ -45,7 +45,10 @@ def main() -> None:
     # Legend above the axes: inside, it covered the right-hand bands (found in the visual review).
     fig.legend(loc="lower center", bbox_to_anchor=(0.5, 0.98), ncol=2)
     info = figures.save(fig, ROOT / "runs/figures/toy_regret")
-    print(json.dumps({"figure": info, "final_regret": summary}, indent=1))
+    reference = load("thompson")[:, -1]
+    for agent in AGENTS[1:]:          # paired over seeds: every agent faced the same problems (same seeds)
+        paired[f"{agent} - thompson"] = str(stats.paired_difference(load(agent)[:, -1], reference))
+    print(json.dumps({"figure": info, "final_regret": summary, "paired_final_regret": paired}, indent=1))
 
 
 if __name__ == "__main__":

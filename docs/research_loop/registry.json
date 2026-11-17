@@ -7,7 +7,7 @@
  "result_checks": ["airesearch.experiments.toy_bandit:check_results"],
  "baselines": {
   "greedy": {
-   "paper": "Posterior-mean greedy bandit agent (textbook baseline; e.g. Lattimore & Szepesvari, Bandit Algorithms, 2020)",
+   "paper": "Posterior-mean greedy bandit agent (textbook baseline; cite a verified source before using it in a paper)",
    "official": {"repo": "none (textbook algorithm); for a real baseline put the authors' repository URL here", "repo_confirmed": false},
    "our_code": ["src/airesearch/experiments/toy_bandit.py"]
   }

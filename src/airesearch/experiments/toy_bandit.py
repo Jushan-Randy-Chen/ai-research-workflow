@@ -8,10 +8,14 @@ lock onto a sub-optimal arm.
   ablation  thompson_shared_noise: one shared Beta draw quantile for all arms per step (isolates "independent
             per-arm randomness"; everything else identical)
 
-What the example shows (5 seeds, 500 steps): Thompson beats greedy and eps-greedy, as predicted, but the ablation
-does NOT support the guess behind it. Shared noise does better than Thompson: one shared quantile per step acts like
-an optimistic index (close to Bayes-UCB), so independent per-arm noise is not the ingredient that matters. This is
-the point of an ablation: its question had an answer we did not know in advance. Record such a result honestly.
+What the example shows (5 seeds, 500 steps, paired over seeds; `make example` prints these):
+  greedy - thompson        +8.5 regret [0.9, 15.7]   (supports H1, but wide: greedy locks on in 3 of 5 seeds)
+  eps_greedy - thompson   +11.9 regret [7.7, 16.7]
+  shared_noise - thompson  -4.8 regret [-6.8, -2.6]  (the ablation does NOT support the guess behind it)
+So independent per-arm noise is not the ingredient that matters here. Our explanation (inferred, not measured): one
+shared quantile per step acts like an optimistic index, close to Bayes-UCB. An ablation is worth running exactly when
+its answer is not known in advance; record such a result honestly. With n = 5 the percentile bootstrap is coarse;
+use more seeds before claiming anything.
 
 Tiny and numpy-only on purpose: it runs in seconds and exercises config -> seeded runs -> stats -> figure -> gates.
 """

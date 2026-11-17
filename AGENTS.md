@@ -58,7 +58,7 @@ The idea is given in docs/PROJECT.md. We do not search for a new idea; we test t
 - Every run writes `runs/<experiment>/<run>/{manifest,status,metrics,result}.json` via `airesearch.runs`; the
   manifest records git commit + diff hash, `uv.lock` hash, hardware and the full config.
 - Jobs are re-runnable: finished runs are skipped, writes are atomic, failures are recorded, not dropped.
-- The test split selects nothing (checkpoint, hyperparameter, variant, Delta, prompt). Selection rules are in
+- The test split selects nothing (checkpoint, hyperparameter, variant, prompt). Selection rules are in
   PROTOCOL.md before the main runs.
 - Report CIs over independent units (seeds/instances) with `airesearch.stats`; paired differences when units are shared.
 - `runs/`, `data/`, checkpoints and third-party code/papers never go into git.

@@ -12,6 +12,9 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 PAPER=paper
+need_checkout() {   # without paper/.git, `git -C paper` would act on THIS repo: refuse instead
+  [ -d "$PAPER/.git" ] || { echo "$PAPER/ is not an Overleaf checkout yet: run '$0 clone <project-id>' first"; exit 1; }
+}
 
 case "${1:-}" in
   clone)
@@ -23,9 +26,11 @@ case "${1:-}" in
     echo "cloned into $PAPER/ (remote: $(git -C "$PAPER" remote get-url origin))"
     ;;
   pull)
+    need_checkout
     git -C "$PAPER" pull --ff-only
     ;;
   push)
+    need_checkout
     msg="${2:-Update from research repo}"
     git -C "$PAPER" add -A
     if git -C "$PAPER" diff --cached --name-only | grep -Eq '^(figures|tables)/'; then

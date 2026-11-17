@@ -13,8 +13,8 @@ lint:
 fmt:
 	uv run ruff format . && uv run ruff check --fix .
 
-status:           ## research-loop gate table
-	uv run research-loop status
+status:           ## research-loop gate table (exit status 1 while a gate is closed is expected)
+	-uv run research-loop status
 
 example:          ## run the worked example end to end (seconds)
 	uv run python scripts/run_experiment.py configs/toy_bandit.yaml
