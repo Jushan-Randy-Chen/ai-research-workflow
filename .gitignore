@@ -1,0 +1,32 @@
+# Python / tooling
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+
+# Results, data and checkpoints never go into Git (they live on disk / object storage; manifests point to them)
+runs/*
+!runs/.gitkeep
+data/*
+!data/.gitkeep
+*.pt
+*.ckpt
+*.safetensors
+*.npz
+*.npy
+wandb/
+
+# Third-party material: keep locally, do not redistribute
+references/papers/*
+!references/papers/.gitkeep
+references/code/*
+!references/code/.gitkeep
+
+# The Overleaf project is its own git repo, cloned into paper/ (see paper/README.md)
+paper/*
+!paper/README.md
+
+# Local agent state
+.claude/settings.local.json

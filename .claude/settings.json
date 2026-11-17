@@ -1,0 +1,14 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd \"$CLAUDE_PROJECT_DIR\" && echo 'Research loop gates (AGENTS.md section 1; skill research-loop):' && timeout 60 uv run --quiet research-loop status --skip-results 2>&1 | grep -E '^\\[|^gate|^tokens' || true"
+          }
+        ]
+      }
+    ]
+  }
+}

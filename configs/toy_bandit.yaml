@@ -1,0 +1,8 @@
+# Worked example (src/airesearch/experiments/toy_bandit.py). Every knob lives here so every run records it.
+experiment: airesearch.experiments.toy_bandit
+agents: [thompson, greedy, eps_greedy, thompson_shared_noise]
+seeds: [0, 1, 2, 3, 4]
+steps: 500
+n_arms: 5
+n_problems: 20
+epsilon: 0.1

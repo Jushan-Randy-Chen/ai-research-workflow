@@ -1,0 +1,21 @@
+{
+ "_doc": "What the research loop must verify (src/airesearch/loop/gates.py; AGENTS.md section 1). Edit in the same change that adds a result series, baseline or ablation. Paper figures are discovered from the manuscript's \\includegraphics automatically.",
+ "manuscript": "paper",
+ "results": [
+  {"name": "toy_bandit runs", "glob": "runs/toy_bandit/*_seed*/result.json", "min_count": 20}
+ ],
+ "result_checks": ["airesearch.experiments.toy_bandit:check_results"],
+ "baselines": {
+  "greedy": {
+   "paper": "Posterior-mean greedy bandit agent (textbook baseline; e.g. Lattimore & Szepesvari, Bandit Algorithms, 2020)",
+   "official": {"repo": "none (textbook algorithm); for a real baseline put the authors' repository URL here", "repo_confirmed": false},
+   "our_code": ["src/airesearch/experiments/toy_bandit.py"]
+  }
+ },
+ "ablations": {
+  "shared_noise": {
+   "question": "Does Thompson sampling's advantage come from independent per-arm randomness? (shared quantile across arms vs independent draws; everything else identical)",
+   "runs": ["runs/toy_bandit/thompson_shared_noise_seed*"]
+  }
+ }
+}
