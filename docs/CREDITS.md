@@ -7,5 +7,7 @@
   Premise, Fix Root Causes, Prove It Works, Laziness Protocol, Minimize Reader Load, Make Operations Idempotent,
   Test Behavior Not Implementation, Sequence Work into Verifiable Units, Encode Lessons in Structure, Session pickup,
   Pause safely.
+- The skill `research-paper-writing` (`.claude/skills/research-paper-writing/`, unmodified, with its LICENSE) is by
+  Master-cai (MIT License, Copyright (c) 2026 Master-cai).
 - Aggregate statistics follow Agarwal et al., "Deep Reinforcement Learning at the Edge of the Statistical Precipice",
   NeurIPS 2021.

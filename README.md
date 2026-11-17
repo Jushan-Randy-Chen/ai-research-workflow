@@ -47,7 +47,7 @@ Then make it yours:
 | Library | `src/airesearch/` | small modules: config + overrides, seeding, re-runnable run dirs, provenance manifests, seed-aware statistics (bootstrap CIs, paired differences, IQM), publication figure style |
 | Loop + gates | `src/airesearch/loop/`, CLI `research-loop` | gate table, hash-bound review records, human approval, review packets, experiment log, token budget |
 | Agent guide | `AGENTS.md` (+ `CLAUDE.md` import) | the operating rules for humans and agents |
-| Skills | `.claude/skills/` | `research-loop`, `session-pickup`, `experiment-loop`, `explain-the-number`, `attack-the-premise`, `verify-visual-results`, `reproduce-baseline`, `verify-baseline-fidelity`, `cross-validate-results`, `verify-ablations`, `literature-review`, `paper-sync-gate`, `code-maintenance` |
+| Skills | `.claude/skills/` | `research-loop`, `session-pickup`, `experiment-loop`, `explain-the-number`, `attack-the-premise`, `verify-visual-results`, `reproduce-baseline`, `verify-baseline-fidelity`, `cross-validate-results`, `verify-ablations`, `literature-review`, `paper-sync-gate`, `research-paper-writing` (by Master-cai, MIT), `code-maintenance` |
 | Hook | `.claude/settings.json` | prints the gate table at the start of every agent session |
 | Project docs | `docs/` | PROJECT, PROTOCOL, CLAIMS (claim -> evidence), DECISIONS (dated), BASELINES, RESEARCH_PRACTICE (the judgment behind the rules) |
 | References | `references/` | verified `refs.bib`, an index of papers and pinned reference code |
@@ -70,4 +70,4 @@ Then make it yours:
 
 Parts of the experiment-loop and code-maintenance guidance are adapted from
 [poteto-mode / pstack](https://github.com/cursor/plugins/tree/main/pstack) by Lauren Tan (MIT); see
-`docs/CREDITS.md`. MIT License.
+`docs/CREDITS.md`. The `research-paper-writing` skill is by Master-cai (MIT, its LICENSE is included). MIT License.

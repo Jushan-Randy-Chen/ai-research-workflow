@@ -13,7 +13,7 @@ The idea is given in docs/PROJECT.md. We do not search for a new idea; we test t
 | 1 BUILD | Test the hypothesis by training + evaluation, trial and error: frozen harness, one change per attempt, kept only if it beats the noise, every attempt logged | agent (ask before expensive runs) | `experiment-loop`, `explain-the-number`, `attack-the-premise` |
 | 2 VERIFY | (a) Look at every figure/render/sample the paper uses and cross-check it against the raw numbers; (b) every baseline runs its OFFICIAL code, reproduced in its own setting first, deviations listed and justified or fixed; (c) cross-check numbers against published and independent sources | agent first, then the human approves | `verify-visual-results`, `reproduce-baseline`, `verify-baseline-fidelity`, `cross-validate-results` |
 | 3 VERIFY | Every ablation makes sense: one factor changed, same protocol as the reference, reference reproduced, answers its question, no held-out selection. Our own design; no need to copy other papers | agent first, then the human approves | `verify-ablations` |
-| 4 WRITE | Only when gates 2 and 3 are open: results go into the Overleaf paper. Otherwise back to step 1 | agent + human | `paper-sync-gate`, `literature-review` |
+| 4 WRITE | Only when gates 2 and 3 are open: results go into the Overleaf paper. Otherwise back to step 1 | agent + human | `paper-sync-gate`, `research-paper-writing`, `literature-review` |
 
 - **Gate state**: `uv run research-loop status` (also `gate 2|3|4`, `figures`, `packet`, `record-*`, `log-attempt`,
   `budget`). A SessionStart hook prints it at the start of every agent session. Orchestrating skill: `research-loop`.

@@ -18,3 +18,9 @@ description: Step 4 of the research loop. Sync the Overleaf manuscript (git) and
    figures/tables changed). Commit/push only when the user asks.
 5. Respect the author's voice: if the user writes the prose, give facts, numbers and suggestions rather than large
    blocks of text.
+
+## Writing quality
+For drafting or revising any section (abstract, introduction, related work, method, experiments, conclusion),
+figure/table presentation, claim-evidence alignment and the pre-submission self-review, use skill
+`research-paper-writing` (its `references/paper-review.md` is the adversarial review). Results still pass this gate
+first.

@@ -13,7 +13,8 @@ The research idea is given (docs/PROJECT.md). Do not search for a new one; test 
    b. align every baseline with its official implementation -> `reproduce-baseline`, `verify-baseline-fidelity`;
    c. cross-check our numbers against published/independent numbers -> `cross-validate-results`.
 3. **VERIFY ablations** make sense (our own design; one factor, same protocol) -> `verify-ablations`.
-4. **WRITE** only when gates 2 and 3 are OPEN -> `paper-sync-gate`. Otherwise back to 1.
+4. **WRITE** only when gates 2 and 3 are OPEN -> `paper-sync-gate`; section writing and self-review ->
+   `research-paper-writing`. Otherwise back to 1.
 
 ## Procedure
 1. `uv run research-loop status --skip-results`, then `uv run research-loop status` (loads results; slower).
